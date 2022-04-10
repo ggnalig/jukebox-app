@@ -1,0 +1,1 @@
+export const convertToMillion = (number) => `${(number/1000000).toFixed(2)} Juta`

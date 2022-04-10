@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
-function App() {
+import { Provider } from 'react-redux';
+import { ErrorBoundary } from 'react-error-boundary';
+  
+import AppStore from './store';
+
+import Home from './pages/home/index';
+import TopSongs from './pages/top-songs/index';
+import ErrorFallback from "./components/ErrorFallback";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Provider store={AppStore}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/top-songs" element={<TopSongs />} />
+              </Routes>
+            </BrowserRouter>
+        </Provider>
+      </ErrorBoundary>
+  )
 }
 
 export default App;
