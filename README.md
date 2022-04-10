@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Application URL
+
+This project was deployed with netlify to [https://timely-cat-11d8f7.netlify.app/](https://timely-cat-11d8f7.netlify.app/).
+
 ## Available Scripts
 
 In the project directory, you can run:
